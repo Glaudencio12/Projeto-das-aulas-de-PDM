@@ -56,6 +56,7 @@
                     android:layout_margin="10dp"
                     android:layout_weight="1"
                     android:drawableTop="@drawable/add_50"
+                    android:onClick="tela_tarefa"
                     android:text="Cadastrar"
                     android:textColor="#3F51B5"
                     app:cornerRadius="10dp" />

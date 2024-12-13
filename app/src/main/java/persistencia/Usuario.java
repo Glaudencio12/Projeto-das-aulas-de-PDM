@@ -5,7 +5,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class Ususario {
+public class Usuario {
 
     private SQLiteOpenHelper bancoHelper;
     private SQLiteDatabase banco;
@@ -16,12 +16,13 @@ public class Ususario {
     private String senha;
     private int categoria;
 
-    public Ususario(Context context){
+    public Usuario(Context context){
         bancoHelper = new Banco(context);
-        banco = bancoHelper.getWritableDatabase();
     }
 
     public void Cadastrar(){
+        banco = bancoHelper.getWritableDatabase();
+
         ContentValues dados = new ContentValues();
         dados.put("nome", this.nome);
         dados.put("login", this.login);
@@ -29,6 +30,7 @@ public class Ususario {
         dados.put("categoria", this.categoria);
 
         banco.insert("usuarios", null, dados);
+        banco.close();
     }
 
     public int getId() {

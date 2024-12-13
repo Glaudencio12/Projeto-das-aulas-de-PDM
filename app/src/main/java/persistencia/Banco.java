@@ -12,18 +12,26 @@ public class Banco extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql = "CREATE TABLE usuario(" +
+        String user = "CREATE TABLE usuario(" +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "nome TEXT,"+
                 "login TEXT,"+
                 "senha TEXT,"+
                 "categoria INTEGER);";
-        db.execSQL(sql);
+        db.execSQL(user);
+
+        String note = "CREATE TABLE tarefa(" +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "descricao TEXT," +
+                "data TEXT," +
+                "status INT);";
+        db.execSQL(note);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS usuarios");
+        db.execSQL("DROP TABLE IF EXISTS tarefas");
         onCreate(db);
     }
 }

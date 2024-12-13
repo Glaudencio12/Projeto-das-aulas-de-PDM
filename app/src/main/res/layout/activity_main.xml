@@ -39,6 +39,7 @@
             android:hint="Nome de Usuário">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/UserLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
@@ -54,6 +55,7 @@
             android:hint="Senha">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/senhaLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
@@ -62,12 +64,13 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/entrar"
             style="@style/Widget.Material3.Button.TonalButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
             android:layout_marginTop="20dp"
+            android:onClick="principal"
             android:text="Acessar" />
 
         <Button
